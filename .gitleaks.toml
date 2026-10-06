@@ -1,0 +1,18 @@
+# Configuración de Gitleaks para el taller
+title = "Gitleaks - Planta Maipo Sur"
+
+[extend]
+# Extiende las reglas por defecto de Gitleaks
+useDefault = true
+
+[[rules]]
+id = "plc-password-fabrica"
+description = "Contraseña de fábrica del PLC escrita en el código"
+regex = '''password:\s*["']?admin123["']?'''
+tags = ["password", "plc", "fabrica"]
+
+[[rules]]
+id = "password-hardcoded-generic"
+description = "Contraseña hardcoded genérica"
+regex = '''(password|passwd|pwd)\s*[:=]\s*["'][^"']{4,}["']'''
+tags = ["password", "hardcoded"]
