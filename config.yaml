@@ -11,7 +11,7 @@ plc:
   puerto: 502
   protocolo: modbus
   # ⚠️ DEFECTO SEMBRADO: contraseña de fábrica escrita directamente
-  password: "admin123"
+  password_env: PLC_PASSWORD
   timeout_segundos: 5
 
 base_datos:
