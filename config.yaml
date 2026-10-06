@@ -1,0 +1,27 @@
+# Configuración del servicio lector_cloro
+# Planta Maipo Sur
+
+servicio:
+  nombre: lector-cloro
+  puerto: 8080
+  intervalo_lectura_segundos: 30
+
+plc:
+  host: 192.168.10.50
+  puerto: 502
+  protocolo: modbus
+  # ⚠️ DEFECTO SEMBRADO: contraseña de fábrica escrita directamente
+  password: "admin123"
+  timeout_segundos: 5
+
+base_datos:
+  host: localhost
+  puerto: 5432
+  nombre: planta_maipo
+  usuario: operador
+  # La contraseña debería venir de una variable de entorno, no del archivo
+  password_env: DB_PASSWORD
+
+logging:
+  nivel: INFO
+  archivo: logs/planta.log
